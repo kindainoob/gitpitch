@@ -28,11 +28,81 @@
 
 ---
 ```
-package main
-import "fmt"
-func main(){
-    // int 型の配列を定義
-    array := [...]int{23,55,76,87,35,11}
-    fmt.Println(array)
+public class Main {
+    private static int[] dataTable = {12,23,45,36,71,94,19,67,28,20};
+    private static int[] hashTable = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+    public static void main(String[] args) {
+        int data,hashedData;
+        
+        for(int i:dataTable){
+            int hashedValue = hashFunc(i);
+            hashTable[hashedValue] = i;
+        }
+        
+        search(23);
+        search(24);
+        search(45);
+        search(67);
+        search(20);
+        
+        
+    }
+    private static int hashFunc(int data){
+        return data % 10;
+    }
+    private static void search(int data){
+        int hashedValue = hashFunc(data);
+        if(hashTable[hashedValue] == data){
+            System.out.println(hashedValue+"番目に"+data+"が見つかりました。");
+            return;
+        }
+        System.out.println("Not found");
+    }
+    
+}
+
+```
+
+---
+# じゃあ要素を追加してみる
+---
+```
+public class Main {
+    private static int[] dataTable = {12,23,45,36,71,94,19,67,28,20,65};
+    private static int[] hashTable = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+    public static void main(String[] args) {
+        int data,hashedData;
+        
+        for(int i:dataTable){
+            int hashedValue = hashFunc(i);
+            hashTable[hashedValue] = i;
+        }
+        
+        search(23);
+        search(24);
+        search(45);
+        search(67);
+        search(20);
+        
+        
+    }
+    private static int hashFunc(int data){
+        return data % 10;
+    }
+    private static void search(int data){
+        int hashedValue = hashFunc(data);
+        if(hashTable[hashedValue] == data){
+            System.out.println(hashedValue+"番目に"+data+"が見つかりました。");
+            return;
+        }
+        System.out.println("Not found");
+    }
+    
 }
 ```
+---
+# あれれ〜おかしいぞ〜
+
+---
+## Hash値が衝突！！
+## シノニム
