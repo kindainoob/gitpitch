@@ -62,7 +62,8 @@ public class Main {
 }
 
 ```
-
+---
+![test](ss2.png)
 ---
 # じゃあ要素を追加してみる
 ---
@@ -100,6 +101,8 @@ public class Main {
     
 }
 ```
+---
+![test](ss3.png)
 ---
 あれれ〜おかしいぞ〜
 
